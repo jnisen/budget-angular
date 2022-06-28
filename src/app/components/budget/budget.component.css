@@ -2,8 +2,6 @@ input {
   text-align: center;
 }
 
-.block-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+button {
+  width: 100%;
 }
