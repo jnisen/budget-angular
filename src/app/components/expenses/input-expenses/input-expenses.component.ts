@@ -11,6 +11,7 @@ export class InputExpensesComponent implements OnInit {
   count: number;
   formError: boolean;
   textError: string;
+  check: boolean = true;
   constructor(private _budgetService: BudgetService) {
     this.nameExpense = '';
     this.count = 0;
@@ -24,6 +25,12 @@ export class InputExpensesComponent implements OnInit {
     if (this.count > this._budgetService.budget) {
       this.formError = true;
       this.textError = 'Expenses can not be greater than budget';
+      return;
+    }
+
+    if (this.count > this._budgetService.remaining) {
+      this.formError = true;
+      this.textError = 'Amount can not be greater than remaining';
       return;
     }
 
@@ -43,5 +50,15 @@ export class InputExpensesComponent implements OnInit {
     this.formError = false;
     this.nameExpense = '';
     this.count = 0;
+  }
+
+  checkRemaining(): boolean {
+    if (this._budgetService.remaining === 0) {
+      this.formError = true;
+      this.textError = 'No more expenses';
+      return true;
+    }
+    this.formError = false;
+    return false;
   }
 }
