@@ -1,1 +1,15 @@
-<p>budget works!</p>
+<div class="col-lg-6 offset-lg-3 mt-5">
+    <h2 class="text-center font">Write you budget</h2>
+    <div class="card">
+        <div class="card-body">
+            <div class="text-center mb-3">
+                <span class="badge bg-danger text-error" *ngIf="countError">Budget must be more than zero</span>
+            </div>
+            <input type="number" [(ngModel)]='count' placeholder="Write you budget"
+                class="form-control form-control-lg">
+            <div class="block-button">
+                <button class="btn btn-primary btn-lg btn-block mt-2" (click)="addBudget()">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>

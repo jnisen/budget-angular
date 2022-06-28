@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  background: #373b44;
+  background: -webkit-linear-gradient(to right, #4286f4, #373b44);
+  background: linear-gradient(to right, #4286f4, #373b44);
+}
+
+.font {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: white;
+}
+
+.text-error {
+  font-size: 1rem;
+}
